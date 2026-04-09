@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gjergj Fishta</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      color: #f5d9a6;
+        background:
+          linear-gradient(rgba(134, 113, 74, 0.578), rgba(172, 133, 78, 0.244)),
+          url("background.jpg");
+
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 64px;
+      border-bottom: 1px solid rgba(255, 200, 140, 0.25);
+    }
+
+    .logo {
+      font-family: Cinzel, serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e8c98b;
+      font-size: 15px;
+      opacity: 0.85;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    /* ===== PAGE ===== */
+    .cases-page {
+      padding: 90px 64px 120px;
+    }
+
+    .cases-header {
+      max-width: 760px;
+      margin: 0 auto 70px;
+      text-align: center;
+    }
+
+    .cases-header h1 {
+      font-family: Cinzel, serif;
+      font-size: 52px;
+      margin-bottom: 18px;
+    }
+
+    .cases-header p {
+      font-size: 17px;
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+
+    /* ===== GRID ===== */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 36px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ===== CARD ===== */
+    .case-card {
+      background: rgba(32, 16, 8, 0.9);
+      border: 1px solid rgba(255, 190, 120, 0.3);
+      border-radius: 18px;
+      padding: 32px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 190, 120, 0.6);
+    }
+
+    .case-tag {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #f2c87c;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .case-card h3 {
+      font-family: Cinzel, serif;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .case-card p {
+      font-size: 15px;
+      line-height: 1.65;
+      opacity: 0.85;
+      margin-bottom: 22px;
+    }
+
+    .case-card span {
+      font-size: 14px;
+      font-weight: 500;
+      color: #f2c87c;
+    }
+
+    /* ===== VIDEO SECTION ===== */
+.video-section {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+.video-box {
+  width: 50%;
+  background: rgba(32, 16, 8, 0.85);
+  border: 1px solid rgba(255, 190, 120, 0.35);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.video-box video {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.video-caption {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #f2c87c;
+  text-align: center;
+  opacity: 0.85;
+}
+
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px 20px;
+  }
+
+  body {
+    background-size: cover;
+    background-position: center top;
+    background-attachment: scroll;
+  }
+
+  .cases-page {
+    padding: 60px 20px 90px;
+  }
+
+  .cases-header h1 {
+    font-size: 36px;
+  }
+
+}
+nav {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  padding-bottom: 6px;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+nav a {
+  flex: 0 0 auto;
+}
+    .chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;        /* e bën më të largët nga teksti */
+}
+
+.chart-wrapper img {
+  width: 55%;              /* e bën më të vogël */
+  max-width: 700px;        /* nuk e bën shumë të madhe në desktop */
+  filter: brightness(1); /* e errëson imazhin */
+  border-radius: 12px;     /* e bën më bukur */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.749);
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">Gjergj Fishta</div>
+    <nav>
+    <a href="index.html">Kryefaqja</a>
+    <a href="grup.html">Punimet E Grupeve</a>
+    <a href="rstkinter.html">Interaktive</a>
+    <a href="rstk.html">Multimedia</a>
+    <a href="njtprgj.html">Produkti</a>
+    </nav>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <section class="cases-page">
+
+    <div class="cases-header">
+      <h1>Punimet e Grupeve.</h1>
+    </div>
+    <br>
+<p>GRUPI 1</p>
+<br>
+<p>Viktoria Preçi - Kredoja e Fishtës; Vija kronologjike e jetës së Fishtës; Telajo; Prezantim në Power Point.
+<br> Melissa Mici - Roli i Fishtës si prift franceskan, poet, shkrimtar, publicist, politikan dhe përkthyes; Poster.
+<br>Alkeda Pjetri - Vija kronologjike e jetës së Fishtës; Fjalime Parlamentare.
+<br>Aleandra Picaku - Vija kronologjike e jetës së Fishtës; Poster.
+<br>Aleksander Kaloçi - Vija kronologjike e jetës së Fishtës.
+
+<div class="chart-wrapper">
+  <img src="grupi 1/8.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/9.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/10.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/11.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/12.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/13.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/14.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/15.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/16.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/17.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/18.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/19.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/20.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/21.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/22.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 1/23.png" alt="">
+</div>
+<br>
+<br>
+Grupi 2
+<br>Genta Frani - Leterkembimet; Censura; Harta. 
+<br>Rajna Ndreca - Leterkembimet; Thenje.
+<br>Rigen Doçi - Leterkembimet; Vdekja dhe Rivarrosja; Telajo.
+<br>Eriselda Deda - Leterkembimet.
+<br>Erli Loci - Leterkembimet.
+<br>Ester Noka - Leterkembimet; Nderime.
+<br>PRODUKT: HARTË E VENDEVE KU PUNOI E JETOI FISHTA; TELAJO.
+<div class="chart-wrapper">
+  <img src="grupi 2/26.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 2/27.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 2/28.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 2/29.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 2/30.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 2/31.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 2/32.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 2/33.png" alt="">
+</div>
+<br>
+<br>
+Elaina Frani - Gjinite qe lavdroi Fishta; Veprat; Konfiliktet ne "L.M"; Cikli i Oso Kukes; Cikli i Tringes; Koha e Re; Krahasim: Mesazhet kryesore; Faqe ëb-i; Fletpalosje.
+<br>Erisa Gjoka - Cikli i Rrezhnices; Ndermjetesia; Cikli i Dede Gjo Lulit; Krahasim: Tematikat.
+<br>Klaus Zefi - Kulshedra; Krahasim: Heroi kryesor.
+<br>Mirela Narkaj - Lidhja e Prizrenit; Telajo.
+<br>Danjela Prendi - Frymezimi per "Lahuten e Malcis";Lugati; Krahasim: Stili dhe struktura.
+<div class="chart-wrapper">
+  <img src="grupi 3/41.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 3/42.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 3/43.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 3/44.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 3/45.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 3/46.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 3/47.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 3/48.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 3/49.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 3/50.png" alt="">
+</div>
+<br>
+<br>
+Isla Frashri - Satirat e Fishtes; Ese argumentuese; Reklame; Intervist[.
+<br>Rea Frashri - Figurat mitologjike; Studime kritike per "Lahuten e Malcis"; Reklama; Telajo; Intervist[.
+<br>Melina Petani - Fishta dramaturg; Interviste.
+<br>Andrea Rama - Studime kritike per "Lahuten e Malcis".
+<br>Alket Kaloçi - Figurat mitologjike.
+<div class="chart-wrapper">
+  <img src="grupi 4/53.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/54.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/55.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/56.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/57.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/58.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/59.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/60.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/61.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/62.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/63.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/64.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/65.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/66.png" alt="">
+</div>
+<div class="chart-wrapper">
+  <img src="grupi 4/67.png" alt="">
+</div>
+</p>
+
+
+
+</div>
+
+
+    
+  </section>
+
+</body>
+</html>
+

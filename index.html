@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gjergj Fishta</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+    *{margin:0;padding:0;box-sizing:border-box}
+body {
+  font-family: Inter, sans-serif;
+  color: #f5d9a6;
+
+  background:
+    linear-gradient(rgba(90, 76, 49, 0.578), rgba(117, 91, 53, 0.244)),
+    url("background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+}
+
+header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:24px 64px;
+    border-bottom:1px solid rgba(255,215,150,.2)
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:Cinzel,serif;
+    font-size:22px;
+    font-weight:700
+}
+nav{
+    display:flex;
+    gap:32px;
+    font-size:15px
+}
+nav a{
+    text-decoration:none;
+    color:#e8c98b;
+    opacity:.85
+}
+nav a:hover{opacity:1}
+.hero{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:50px 24px
+}
+.hero h1{
+    font-family:Cinzel,serif;
+    font-size:64px;
+    font-weight:700;
+    margin-bottom:24px
+}
+.hero p{
+    font-size:28px;
+    max-width:800px;
+    margin-bottom:40px;
+    opacity:.9
+}
+.hero button{
+    background:linear-gradient(135deg,rgb(#dcbd60),rgb(#dcbd60));
+    border:none;
+    border-radius:12px;
+    padding:14px 36px;
+    font-size:20px;
+    font-weight:500;
+    color:#000000;
+    cursor:pointer
+}
+.hero button:hover{opacity:.9}
+.container {
+  max-width: 800px;     /* kontrollon gjerësinë */
+  margin: 0 auto;       /* e vendos në qendër */
+}
+
+.container p {
+  text-align: left;     /* tekst majtas */
+  line-height: 1.7;
+  font-size: 17px;
+  margin-bottom: 24px;
+}
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px 20px;
+  }
+
+  body {
+    background-size: cover;
+    background-position: center top;
+    background-attachment: scroll;
+  }
+
+  .cases-page {
+    padding: 60px 20px 90px;
+  }
+
+  .cases-header h1 {
+    font-size: 36px;
+  }
+
+}
+nav {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  padding-bottom: 6px;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+nav a {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 480px) {
+
+  header{
+    flex-direction:column;
+    gap: 12px;
+    align-items:flex-start;
+  }
+
+  nav{
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .logo{
+    font-size: 20px;
+  }
+
+  .hero{
+    padding: 40px 16px;
+  }
+
+  .hero h1{
+    font-size: 36px;
+  }
+
+  .hero p{
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .hero button{
+    width: 100%;
+    max-width: 260px;
+  }
+  
+}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Gjergj Fishta</div>
+    <nav>
+    <a href="index.html">Kryefaqja</a>
+    <a href="grup.html">Punimet E Grupeve</a>
+    <a href="rstkinter.html">Interaktive</a>
+    <a href="rstk.html">Multimedia</a>
+    <a href="njtprgj.html">Produkti</a>
+    </nav>
+</header>
+<section class="hero">
+<h1>Gjergj Fishta</h1>
+
+<a href="njtprgj.html"><button>Mëso më shumë</button></a>
+</section>
+</body>
+
+</html>
